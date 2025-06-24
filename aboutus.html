@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - Yard Service</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f9f9f9; background-image:url(uploads/background_image.png);}
+    .navbar {
+      background: #2c3e50; padding: 10px 30px; display: flex;
+      justify-content: space-between; align-items: center; color: white;
+    }
+    .navbar .nav-links a {
+      color: white; text-decoration: none; margin-left: 20px;
+    }
+    .navbar .logo {
+      font-size: 22px; font-weight: bold;
+    }
+    .content {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">Yard Service</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contactus.html">Contact Us</a>
+    <a href="booking.php">Booking</a>
+    <a href="login.php">Login</a>
+  </div>
+</div>
+
+<div class="content">
+  <h2>About Us</h2>
+  <p>
+    Yard Service is a trusted provider of quality yard-related services and materials across the region.
+    We specialize in delivering a wide range of building materials such as concrete bricks, design floor stones,
+    pillars, sand, and stones — all available in various sizes and prices to suit your needs.
+  </p>
+  <p>
+    Our mission is to offer affordable, reliable, and timely solutions to construction professionals,
+    homeowners, and businesses. With a user-friendly platform, transparent pricing, and exceptional support,
+    we ensure a seamless experience from booking to delivery.
+  </p>
+</div>
+
+<footer>
+  &copy; <?= date("Y") ?> Yard Service. All rights reserved.
+</footer>
+
+</body>
+</html>
