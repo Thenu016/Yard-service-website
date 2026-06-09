@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";      // or your database host
-$username = "root";       // your database username
-$password = "";           // your database password
-$database = "yard_service";  // your database name
+$host = getenv('DB_HOST') ?: "localhost";      // or your database host
+$username = getenv('DB_USER') ?: "root";       // your database username
+$password = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : ""; // your database password
+$database = getenv('DB_NAME') ?: "yard_service";  // your database name
 
 $conn = new mysqli($host, $username, $password, $database);
 

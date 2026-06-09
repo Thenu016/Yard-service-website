@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:10.4
+    container_name: yard_service_db
+    environment:
+      MYSQL_DATABASE: yard_service
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./yard_service.sql:/docker-entrypoint-initdb.d/init.sql
+      - db-data:/var/lib/mysql
+    restart: always
+
+  web:
+    build: .
+    container_name: yard_service_web
+    ports:
+      - "8000:80"
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: ""
+      DB_NAME: yard_service
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: yard_service_pma
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  db-data:
